@@ -1,0 +1,29 @@
+#grid {
+	position: fixed;
+	top: 0px;
+	height: 1000px;
+	z-index: 10;
+	width: 100%;
+	opacity: .5;
+
+	div {
+		height: 100%;
+	}
+
+	div.col-sm-1 {
+		&:first-child {
+			border-left: 1px solid red;
+		}
+
+		 &:last-child {
+			border-right: 1px solid red;
+		 }
+	}
+
+	div div div div {
+		height: 100%; 
+		width: 100%; 
+		box-sizing: content-box; 
+		background-color: #f7bec2;
+	}
+}

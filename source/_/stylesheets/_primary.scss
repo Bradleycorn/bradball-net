@@ -1,0 +1,110 @@
+//body & html styles needed for off-canvas nav
+body, html {
+	height: 100%;
+	width: 100%;
+	background-color: $MenuBackground;
+}
+
+html {
+	/* Desktop */
+	font-size: $BaseFontSize;
+
+
+	@media (max-width: 767px) {
+		font-size: $BaseFontSize - 4;
+	}
+}
+
+body {
+	@include BodyCopy;
+	font-size: $BaseFontSize;
+	line-height: $BaseFontSize * 1.7;
+}
+
+h1 {
+	@include Heading;
+	font-size: 3rem;
+}
+
+h2 {
+	@include Heading;
+	font-size: 2rem;
+}
+
+h3 {
+	@include Heading;
+	font-size: 1.5rem;
+}
+
+h4 {
+	@include Heading;
+	font-size: 1rem;
+}
+
+h5 {
+	@include Heading;
+	font-size: 0.75rem;
+}
+
+h6 {
+	@include Heading;
+	font-size: 0.5rem;
+}
+
+ul, ol {
+	padding-left: 1rem;
+	list-style-position: outside;
+}
+
+a {
+	color: $ActionColor;
+	text-decoration: underline;
+	&:visited {
+		color: $ActionColor;
+	}
+
+	&:hover {
+		color: $HighlightColor;
+	}
+
+
+}
+
+a.label {
+	background-color: $MenuBackground;
+	color: #ffffff !important;
+	font-weight: normal;
+	text-decoration: none;
+
+	&:hover {
+		background-color: $ActionColor;
+	}
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 0;
+	font-size: 1rem;
+}
+
+.list-inline > li {padding: 0; line-height: 31px;}
+
+.menu-handle {
+	outline: none;
+	background: transparent;
+	border: none;
+	height: 19px;
+	margin: 15px 10px 0 0;
+
+	.menu-icon {
+		display: block;
+		width: 17px;
+		height: 3px;
+		border-radius: 1px;
+		background-color: $HeaderColor;
+
+		&+.menu-icon {
+			margin-top: 4px;
+		}
+	}
+}

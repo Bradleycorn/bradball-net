@@ -1,0 +1,10 @@
+{
+  "name": "BradBall-net",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "respond": "latest",
+    "modernizr": "latest",
+    "jquery": "latest"
+  }
+}

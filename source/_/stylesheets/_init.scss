@@ -1,0 +1,43 @@
+/* COLORS */
+//Black-ish
+$CopyColor: #404040;
+
+//Grey
+$LightCopy: #BFBFBF;
+
+//Dark Blue
+$HighlightColor: #2A558C;
+
+//Light Blue
+$ActionColor: #3B7FD9;
+
+
+$MenuBackground: #404040;
+$MenuHeaderBackground: #BFBFBF;
+$MenuHoverColor: #FFFFFF;
+
+$HeaderColor: #FFFFFF;
+
+
+/* FONT STACKS */
+$SansFont: 'Open Sans', Arial, sans-serif;
+$SerifFont: 'Roboto', Verdana, serif;
+
+$BaseFontSize: 16px;
+
+@mixin BodyCopy {
+	color: $CopyColor;
+	font-family: $SansFont;
+	font-weight: 400;
+}
+
+@mixin Heading {
+	font-family: $SerifFont;
+	font-weight: 300;
+}
+
+@mixin SubHead {
+	font-family: $SerifFont;
+	font-weight: 700;
+}
+
