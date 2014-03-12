@@ -46,7 +46,6 @@
 <?php require(get_template_directory() . '/_/inc/off-canvas-menu.php'); ?>
 <section id="Page-Canvas">
 	<header id="Site-Header">
-			<a   id="Site-Icon" href="/"><span>B</span>B</a>
 			<div id="Site-Badge">
 				<div id="Site-Name"><a href="/">BradBall.net</a></div>
 				<div id="Tag-Line">Developer of web things, Dad, Jesus-Follower</div>

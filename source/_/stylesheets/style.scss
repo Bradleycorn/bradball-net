@@ -46,33 +46,6 @@ $TopNavFontSize: .75rem;
 $TopNavItemVertPadding: .25rem;
 $TopNavVertPadding: (($LogoIconFontSize + ($LogoIconVertPadding * 2)) -($TopNavFontSize + ($TopNavItemVertPadding * 2))) / 2;
 
-#Site-Icon {
-
-	font-family: $SansFont;
-	font-weight: 800;
-	font-size: 3rem;
-	line-height: 3rem;
-	color: #ffffff;
-	//text-shadow: 1px 1px 1px #404040;
-//	display: inline-block;
-display: none;
-	background-color: $ActionColor;
-	padding: .3rem .5rem;
-	float: left;
-	text-decoration: none;
-
-	span {
-		display: inline-block;
-		-webkit-transform:rotateY(180deg);
-  		-moz-transform:rotateY(180deg);
-  		-o-transform:rotateY(180deg);
-  		-ms-transform:rotateY(180deg);
-  		transform:rotateY(180deg);
-		unicode-bidi:bidi-override;
-		margin-right: -5px;
-	}
-}
-
 #Site-Badge {
 	display: inline-block;
 	font-family: $SansFont;
