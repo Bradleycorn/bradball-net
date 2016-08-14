@@ -1,6 +1,10 @@
-.DS_Store
+.sass-cache
 .tmp
+art
 dist
 node_modules
-theme
-source/_/bower_components
+src/_/bower
+src/_/css
+.DS_Store
+Thumbs.db
+npm-debug.log
