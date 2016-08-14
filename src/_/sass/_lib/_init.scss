@@ -1,0 +1,33 @@
+/** 
+    This is where we initialize global variables that
+    are used throughout the site's css. 
+
+    In addition to our variables, we'll also go ahead and
+    pull in some bootstrap components that we use often, including:
+    - The Bootstrap variables
+    - The Bootsrap Grid breakpoint media query mixins 
+	
+	Note that we are using bootstrap v4 on this site
+*/
+
+/** COLORS **/
+$ActionColor: #ff5f2e;
+$PrimaryColor: #004e66;
+$GrayColor: #e1eef6;
+$AltColor: #fcbe32; 
+
+
+/** TYPOGRAPHY **/
+$SansFont: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+$SerifFont: Georgia, "Times New Roman", Times, serif;
+$MonoFont:  "Ubunto Monto", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$AltFont: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+
+$PrimaryFont: $SansFont;
+
+
+/*
+ * Include basic boostrap variables, as well as bootrap's mixins for responsive breakpoints.
+ */
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';

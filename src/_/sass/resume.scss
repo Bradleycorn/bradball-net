@@ -1,0 +1,45 @@
+@import 'layout';
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $AltFont;
+	font-weight: 300;
+}
+
+article + article,
+#Sidebar article {
+	border-top: 1px dotted $PrimaryColor;
+	padding-top: 1em;
+}
+
+
+
+.job {
+	.position { margin-bottom: 0; }
+	.employer { font-size: .9em; }
+	.dates { font-size: .9em; }
+	.description { margin-top: 1em;}
+
+
+}
+
+#Sidebar {
+	font-size: .9em;
+
+	h6 {
+		font-weight: 400;
+		margin-bottom: .25em;
+	}
+}
+
+.school {
+	margin-bottom: 1em;
+}
+
+$min: breakpoint-min(md, $grid-breakpoints);
+@media print, (min-width: $min) {
+	#Sidebar article {
+		border-top: none;
+
+		&:first-child { padding-top: 0; }
+	}
+}

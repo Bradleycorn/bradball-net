@@ -1,10 +1,23 @@
 {
-  "name": "BradBall-net",
-  "version": "1.0.0",
+  "name": "bradball.net",
+  "version": "2.0.0",
+  "authors": [
+    "Brad Ball <development@bradball.net>"
+  ],
+  "description": "Personal web site and resume for Brad Ball",
+  "license": "MIT",
+  "homepage": "http://www.bradball.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "bootstrap": "latest",
-    "respond": "latest",
-    "modernizr": "latest",
-    "jquery": "latest"
+    "jquery": "~1",
+    "bootstrap": "~4",
+    "fontawesome": "~4",
+    "webfontloader": "~1"
   }
 }

@@ -1,0 +1,24 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+
+/*
+	Red   #e85a71
+	Gray  #d8e9ef 
+	Blue  #4ea1d3
+	Dark  #454552
+ */
+
+$brand-primary: 	#ff5f2e;  //red
+$brand-info: 		#004e66;  //blue
+
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  "Ubunto Monto", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-transitions: true;

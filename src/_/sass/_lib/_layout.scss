@@ -1,0 +1,151 @@
+/**
+ *  LAYOUT.SCSS
+ *
+ * 	This could be considered our "primary stylesheet". 
+ * 	It is responsible for a few things:
+ *
+ *
+ *  1. It defines the styles for our basic site layout, and
+ *     components that are global and found on (almost) every page. 
+ *     Here you'll find styles for the site header and footer, 
+ *     sidebars, etc. 
+ *
+ *  2. It's the 'base' stylesheet that should be imported
+ *     once on all pages. Imported it gets you access
+ *     to everything in our init.scss.
+ *
+ *     NOTE: While this sheet should be imported on every page,
+ *     it should not be imported in EVERY stylesheet. This
+ *     stylesheet contains output style rules. importing it
+ *     more than once on any given page will result in all
+ *     of the rules in this file being output multiple times.
+ *
+ * 	   The recommended approach would be to import this file
+ * 	   once in your "main" stylesheet file for a page. If 
+ * 	   the page includes other stylesheets, import the init.scss
+ * 	   directly, instead of relying on this layout.scss file.
+ */
+
+@import 'init';
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+.print-only-block,
+.print-only-inline {
+	display: none;
+}
+
+#ResumeHeader {
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+	line-height: 1.2;
+
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		justify: space-between;
+		align-items: stretch;
+	}
+
+	.hero, .contact {
+		flex: 0 1 auto;
+		width: 100%;
+	}
+
+	.contact {
+		padding-top: 1em;
+		text-align: center;
+	}
+
+	.site-logo {
+		float: left;
+		height: 4.5em;
+		margin-right: .75em;
+	}
+
+	.site-title {
+		font-family: $AltFont;
+	}
+
+	.my-name { 
+		font-size: 2.5em; 
+	}
+	.job-title {
+		font-weight: 300;
+	}
+
+}
+
+
+#PrimayContent, #Sidebar {flex: 0 1 auto; }
+#PrimaryContent { width: 100%; }
+#Sidebar { width: 100%; }
+
+#ResumeFooter {
+	background: $PrimaryColor;
+	color: $GrayColor;
+
+	padding-top: 2em;
+	padding-bottom: 2em;	
+}
+
+
+@include media-breakpoint-up(sm) {
+	#ResumeHeader {
+		.hero {
+			width: 70%;
+		}
+
+		.contact {
+			width: 30%;
+			padding-top: 0;
+			text-align: right;
+		}
+	}
+}
+
+$min: breakpoint-min(md, $grid-breakpoints);
+@media print, (min-width: $min) {
+	.flex-container { flex-flow: row nowrap; }
+	#PrimaryContent { 
+		width: 75%; 
+		padding-right: 15px;
+	}
+	#Sidebar { 
+		padding-left: 15px;
+		width: 25%; 
+	}
+}
+
+@media print {
+	body {
+		font-size: .9rem;
+	}
+
+	.container {
+		max-width: none !important;
+	}
+
+	#ResumeFooter {
+		display: none;
+	}
+
+	.print-only-block {
+		display: block !important;
+	}
+
+	.print-only-inline {
+		display: inline !important;
+	}
+
+	a {
+		color: inherit !important;
+		text-decoration: none !important;
+	}
+
+}
