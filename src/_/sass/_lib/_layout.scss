@@ -135,6 +135,8 @@ $min: breakpoint-min(md, $grid-breakpoints);
 		display: none;
 	}
 
+	.screen-only { display: none; }
+
 	.print-only-block {
 		display: block !important;
 	}

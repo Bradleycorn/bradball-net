@@ -335,7 +335,7 @@ gulp.task('copy-files', ['clean'], function() {
 	.pipe(gulp.dest(DIST_PATH));
 
 	gulp.src([
-		SRC_PATH+"/**/*.+(svg|xml|ico|json)",
+		SRC_PATH+"/**/*.+(svg|xml|ico|json|pdf)",
 		"!"+SRC_PATH+"/_/bower/**/*.*"
 	], {base: SRC_PATH})
 	.pipe(gulp.dest(DIST_PATH));
