@@ -1,11 +1,22 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
 ###
-# Strip the .php|html extension of any requests and redirect.
-#
-# See the rule below that will take the new stripped uri
-# and actually serve the .html file.
+# Prevent a redirect loop when stripping html and php from files
 ###
-RewriteCond %{REQUEST_URI} .(php|html)$
-RewriteRule (.+).(php|html)$ /$1/ [NC,R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+###
+# For now, redirect EVERYTHING to the resume,
+# since we don't have any other content
+###
+RewriteCond %{REQUEST_URI} !resume/
+RewriteCond %{REQUEST_URI} !_/(.*)
+RewriteRule .* /resume/ [L,R]
+#Redirect the homepage to the resume page
+#RewriteRule ^(index|default)?/?$ /resume/ [NC,R=301,L]
 
 ###
 # Add a trailing slash to any file request 
@@ -15,38 +26,35 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=301,L]
 
+###
+# Serve the .html file without the extension
+###
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [NC,L]
 
 ###
-# Redirect the homepage to the resume page
+# Serve the .php file without the extension
 ###
-RewriteRule ^(index|default)?/?$ /resume/ [NC,R=301,L]
-
-###
-# For now, redirect EVERYTHING to the resume,
-# since we don't have any other content
-###
-RewriteCond %{REQUEST_URI} !resume/
-RewriteCond %{REQUEST_URI} !_/(.*)
-RewriteRule .* /resume/ [L,R,END]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [NC,L]
 
 
 ###
-# Above, requests for .php|html files have the extension stripped to create
-# a friendly URL, and are then redirected. 
-# Here, we'll process that stripped and redirected uri
-# and actually serve the php|html file.
+# Strip the .php or .html extension of any requests and redirect.
 #
-# Note that this rule uses the END parameter (to prevent an infinite loop with
-# the rule above, removing and adding the .php|html over and over).
-# Because of this, no more rewrite rules will be processed.
-# THIS IS THE FINAL RULE. ALL REWRITE PROCESSING WILL STOP AFTER THIS RULE.
+# See the rule below that will take the new stripped uri
+# and actually serve the .php file.
 ###
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.+)/$ $1.php [NC,END]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule (.+)\.(html|php)$ /$1/ [NC,R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)/$ $1.html [NC,END]
+</IfModule>
+
+
+
+
